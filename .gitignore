@@ -1,0 +1,49 @@
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+**/*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+**/*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+**/*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+**/.vs
+**/*.vcxproj*
+**/CMakeFiles
+**/*.sln
+**/*.ini
+**/*.log
+**/.idea
+**/*.swp
+**/*.tlog
+
+Intermediate
+Binaries
+
+**/*/__pycache__
