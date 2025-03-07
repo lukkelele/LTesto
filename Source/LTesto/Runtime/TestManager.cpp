@@ -6,8 +6,6 @@
 #include <LkEngine/Serialization/FileStream.h>
 #include <LkEngine/Serialization/YAMLSerialization.h>
 
-#include "Test/Suite/Core/EnumTests.h"
-
 namespace LkEngine {
 
 	using namespace Test;
