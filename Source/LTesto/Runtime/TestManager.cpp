@@ -3,8 +3,9 @@
 #include <LkEngine/Core/Core.h>
 #include <LkEngine/Core/Globals.h>
 #include <LkEngine/Core/IO/FileSystem.h>
+
 #include <LkEngine/Serialization/FileStream.h>
-#include <LkEngine/Serialization/YAMLSerialization.h>
+#include <LkEngine/Serialization/YamlSerialization.h>
 
 namespace LkEngine {
 
@@ -64,7 +65,7 @@ namespace LkEngine {
 
 		LK_TEST_INFO_TAG("TestManager", "Running {} tests for: {}", Tests.size(), Enum::ToString(Suite));
 		const FRuntimeArguments& RuntimeArgs = Global::GetRuntimeArguments();
-		const std::string ResultFile = std::format("TestResult-{}.yaml", Enum::ToString(Suite)); 
+		const std::string ResultFile = LK_FMT_LIB::format("TestResult-{}.yaml", Enum::ToString(Suite)); 
 
 		YAML::Emitter Out;
 		Out << YAML::BeginMap;
@@ -105,7 +106,7 @@ namespace LkEngine {
 			LFileSystem::CreateDirectory(ResultDir);
 		}
 
-		const std::string FileOutPath = std::format("{}/{}", ResultDir, ResultFile);
+		const std::string FileOutPath = LK_FMT_LIB::format("{}/{}", ResultDir, ResultFile);
 		LK_TEST_INFO("Saving test results: {}", FileOutPath);
 		std::ofstream FileOut(FileOutPath);
 		if (FileOut.is_open() && FileOut.good())
