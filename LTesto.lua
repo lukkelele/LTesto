@@ -61,6 +61,8 @@ project "LTesto"
 	filter "system:linux"
         defines { "LK_PLATFORM_LINUX" }
 
+    filter {}
+
 	filter "configurations:AutomationTest"
 		kind "ConsoleApp"
 		symbols "On"
