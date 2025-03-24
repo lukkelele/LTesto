@@ -46,13 +46,13 @@ namespace LkEngine::Test {
 	};
 
 	/**
-	 * @class LAutomationTestBase
+	 * @class LAutomationTest
 	 */
-	class LAutomationTestBase : public LObject
+	class LAutomationTest : public LObject
 	{
 	public:
-		explicit LAutomationTestBase(const std::string& InName);
-		virtual ~LAutomationTestBase();
+		explicit LAutomationTest(const std::string& InName);
+		virtual ~LAutomationTest();
 
 		/**
 		 * @brief Run the test.
@@ -96,7 +96,7 @@ namespace LkEngine::Test {
 		LTestExecutionData ExecutionData{};
 		std::string TestName{};
 	private:
-		LCLASS(LAutomationTestBase);
+		LCLASS(LAutomationTest);
 	};
 
 }

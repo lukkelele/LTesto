@@ -21,13 +21,13 @@ namespace LkEngine {
 		 * Register a test.
 		 * Invoked in the LAutomationTestBase constructor.
 		 */
-		CORE_API bool RegisterAutomationTest(const std::string& TestName, Test::LAutomationTestBase* InTestInstance);
+		CORE_API bool RegisterAutomationTest(const std::string& TestName, Test::LAutomationTest* InTestInstance);
 
 		/**
 		 * Unregister a test.
 		 * Invoked in the LAutomationTestBase destructor.
 		 */
-		CORE_API bool UnregisterAutomationTest(const std::string& TestName, Test::LAutomationTestBase* InTestInstance);
+		CORE_API bool UnregisterAutomationTest(const std::string& TestName, Test::LAutomationTest* InTestInstance);
 
 		CORE_API void RunTests(const Test::ETestSuite Suite = Test::ETestSuite::All) const;
 
@@ -44,7 +44,7 @@ namespace LkEngine {
 		/**
 		 * Get the currently running test.
 		 */
-		Test::LAutomationTestBase* GetCurrentTest() const
+		Test::LAutomationTest* GetCurrentTest() const
 		{
 			return CurrentTest;
 		}
@@ -58,7 +58,7 @@ namespace LkEngine {
 		 * Function to create a test instance.
 		 * Used in the test macros to register tests statically.
 		 */
-		using FTestCreator = std::function<std::shared_ptr<Test::LAutomationTestBase>()>;
+		using FTestCreator = std::function<std::shared_ptr<Test::LAutomationTest>()>;
 
 		/**
 		 * Add a test creator to a suite.
@@ -83,7 +83,7 @@ namespace LkEngine {
 		/**
 		 * @brief Test instances.
 		 */
-		std::unordered_map<std::string, Test::LAutomationTestBase*> TestInstanceMap{};
+		std::unordered_map<std::string, Test::LAutomationTest*> TestInstanceMap{};
 
 		/**
 		 * Test creator functions mapped to their corresponding test suites.
@@ -93,7 +93,7 @@ namespace LkEngine {
 	private:
 		CORE_API static bool bCaptureStack;
 
-		Test::LAutomationTestBase* CurrentTest = nullptr;
+		Test::LAutomationTest* CurrentTest = nullptr;
 	};
 
 }

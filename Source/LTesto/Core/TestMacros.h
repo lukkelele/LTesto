@@ -45,7 +45,7 @@ namespace LkEngine::Enum
  *  Declare an automation test.
  */
 #define LK_DECLARE_AUTOMATION_TEST(TestClass, ...)                         \
-    class TestClass : public ::LkEngine::Test::LAutomationTestBase         \
+    class TestClass : public ::LkEngine::Test::LAutomationTest         \
     {                                                                      \
     public:                                                                \
         TestClass();                                                       \
@@ -87,7 +87,7 @@ namespace LkEngine::Enum
  */
 #define LK_DEFINE_AUTOMATION_TEST(TestClass, ...)                \
     TestClass::TestClass()                                       \
-          : ::LkEngine::Test::LAutomationTestBase(#TestClass)    \
+          : ::LkEngine::Test::LAutomationTest(#TestClass)    \
 	{                                                            \
 		LOBJECT_REGISTER();                                      \
 	}                                                            \

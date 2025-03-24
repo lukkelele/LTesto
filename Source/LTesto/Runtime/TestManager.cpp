@@ -19,7 +19,7 @@ namespace LkEngine {
 		return TestManager;
 	}
 
-	bool LTestManager::RegisterAutomationTest(const std::string& TestName, LAutomationTestBase* InTestInstance)
+	bool LTestManager::RegisterAutomationTest(const std::string& TestName, LAutomationTest* InTestInstance)
 	{
 		LK_CORE_VERIFY(!TestName.empty(), "Test name is empty");
 		LK_CORE_VERIFY(InTestInstance);
@@ -40,7 +40,7 @@ namespace LkEngine {
 		return !bTestRegistered;
 	}
 
-	bool LTestManager::UnregisterAutomationTest(const std::string& TestName, LAutomationTestBase* InTestInstance)
+	bool LTestManager::UnregisterAutomationTest(const std::string& TestName, LAutomationTest* InTestInstance)
 	{
 		LK_CORE_VERIFY(!TestName.empty(), "Test name is empty");
 		auto Iter = TestInstanceMap.find(TestName); 
@@ -73,7 +73,7 @@ namespace LkEngine {
 
 		for (const auto& TestCreator : Tests)
 		{
-			std::shared_ptr<Test::LAutomationTestBase> TestInstance = TestCreator();
+			std::shared_ptr<Test::LAutomationTest> TestInstance = TestCreator();
 			LK_CORE_ASSERT(TestInstance);
 			const std::string TestName = TestInstance->GetName();
 
