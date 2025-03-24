@@ -8,8 +8,9 @@ Test framework used by [LkEngine](https://github.com/lukkelele/LkEngine/tree/mai
 Test suite for base engine functionality, non-graphics related.
 
 * [ObjectPtr](https://github.com/lukkelele/LkEngine/blob/main/LkEngine/Test/Suite/Core/ObjectPtrTests.cpp)
-* [String](https://github.com/lukkelele/LkEngine/blob/main/LkEngine/Test/Suite/Core/StringTests.cpp)
 * [Enum](https://github.com/lukkelele/LkEngine/blob/main/LkEngine/Test/Suite/Core/EnumTests.cpp)
+* [Vector](https://github.com/lukkelele/LkEngine/blob/main/LkEngine/Test/Suite/Core/VectorTests.cpp) (Mathematics)
+* [String](https://github.com/lukkelele/LkEngine/blob/main/LkEngine/Test/Suite/Core/StringTests.cpp)
 
 ---
 
