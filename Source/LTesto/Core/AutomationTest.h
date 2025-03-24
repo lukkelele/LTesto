@@ -8,7 +8,6 @@
 
 #include "TestMacros.h"
 
-
 namespace LkEngine::Test {
 
 	struct FTestExecutionEntry
